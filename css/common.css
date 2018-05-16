@@ -1,0 +1,430 @@
+body {
+    font: 12px "microsoft yahei", Arial, Helvetica, sans-serif;
+    color:#666;
+    margin: 0;
+    padding: 0;
+}
+ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd {
+    margin:0px;
+    padding:0px;
+    border:none;
+    list-style:none;
+}
+input {border: none;}
+.lf   {float: left;}
+.rt  {float: right;}
+/* .clear  {clear: both;} */
+.clear {
+    display: block;
+    content: '';
+    clear: both;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+a:hover {
+    color: #ff0700;
+    text-decoration: underline;
+}
+
+/* 整体布局 */
+#top_box, #top_main, #nav, #banner, #main, #foot_box, #footer {
+    width: 1211px;
+    margin: 0 auto;
+}
+#top {
+    width: 100%;
+    height: 30px;
+    background: #f7f7f7;
+    line-height: 30px;
+    border-bottom: 1px solid #eee;
+}
+#top_box {
+    height: 30px;
+}
+#top_main {
+    height: 60px;
+    padding: 15px 0;
+}
+#nav {
+    height: 40px;
+    background-color: #e64346;
+}
+
+/********************* 页面顶部 *******************/
+/* 左侧收藏京东 */
+#top_box > img {
+    display: block;
+    float: left;
+    margin: 8px 4px;
+}
+#top_box > a {
+    display: block;
+    float: left;
+    line-height: 30px;
+    width: 60px;
+}
+/* 右侧链接菜单 */
+#top_box div.rt > ul > li{
+    float: left;
+    text-align: center;
+    position: relative;
+    margin-right: 5px;
+    z-index: 1;
+}
+#top_box ul li b {
+    border-left: 1px solid #ddd;
+    height: 12px;
+    padding: 0 5px 0 0;
+}
+li.vip a {
+    background: url('../Images/vip.jpg') left center no-repeat;
+    padding-left: 30px;
+}
+li.dakehu a {
+    background: url('../Images/dakehu.jpg') left center no-repeat;
+    padding-left: 30px;
+}
+li.app_jd a {
+    display: inline-block;
+    background: url('../Images/iconlist_2.png') -128px -357px no-repeat;
+    height: 26px;
+    padding-left: 20px;
+}
+li.app_jd a:hover {
+    background-position: -128px -396px;
+}
+li.service > a {
+    display: inline-block;
+    height: 26px;
+    padding: 0 15px;
+    background: url('../Images/jt_down.jpg') 65px center no-repeat;
+    border: 1px solid transparent;
+}
+li.service > a:hover {
+    background: url('../Images/jt_up.jpg') 65px center no-repeat;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: 0px;
+    position: relative;
+    z-index: 40;
+}
+li.service > a:hover + #service_items {
+    display: block;
+}
+/* 客户服务弹出菜单 */
+#service_items {
+    display: block;
+    border: 1px solid #ddd;
+    border-top: 0;
+    background-color: #fff;
+    position: absolute;
+    top: 27px;
+    left: 6px;
+    z-index: 30;
+    display: none;
+}
+#service_items li {
+    padding: 0 15px;
+    margin: 0;
+}
+
+/**************** LOGO 搜索框 ****************/
+#search_box {
+    width: 510px;
+    padding: 4px 80px 0 40px;
+    position: relative;
+}
+#search_box div.search {
+    width: 500px;
+    height: 30px;
+    border: 3px solid #e4393c;
+    background-color: #e4393c;
+}
+#search_box div.search input.text {
+    width: 405px;
+    height: 20px;
+    padding: 5px;
+    background-color: #fff;
+    line-height: 20px;
+    color: #999;
+    font-family: Arial, "\5b8b\4f53";
+}
+#search_box div.search input.button {
+    width: 80px;
+    height: 27px;
+    background: #e3393c;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+/* 热词搜索 */
+#search_box div.hot_words {
+    height: 18px;
+    color: #999;
+    overflow: hidden;
+}
+#search_box div.hot_words span,#search_box div.hot_words a {
+    float: left;
+    font-weight: 400;
+    margin-right: 10px;
+    color: #999;
+}
+#search_box div.hot_words span {
+    margin-right: 0;
+}
+/* 我的京东 */
+#my_jd {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background: #f7f7f7 url('../Images/iconlist_2.png') -116px -24px no-repeat;
+    padding-left: 30px;
+    margin: 10px 10px 0 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+}
+#my_jd b {
+    border: 5px solid transparent;
+    border-top-color: #ccc;
+    position: absolute;
+    top: 13px;
+    right: 8px;
+}
+#my_jd:hover {
+    background-color: #fff;
+    background-position: -116px -54px;
+}
+#shopcart {
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    background: #f7f7f7 url('../Images/iconlist_2.png') -116px -85px no-repeat;
+    padding-left: 30px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+}
+#shopcart b {
+    border: 5px solid transparent;
+    border-top-color: #ccc;
+    position: absolute;
+    top: 13px;
+    right: 6px;
+}
+#shopcart:hover {
+    background-position: -116px -116px;
+    background-color: #fff;
+}
+/***************** nav 部分 *****************/
+#nav > p {
+    width: 210px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #cd2a2c;
+    position: relative;
+}
+#nav > p a {
+    color: #fff;
+    padding-left: 15px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
+}
+#nav > p b {
+    width: 20px;
+    height: 20px;
+    background: url('../Images/iconlist_2.png') -65px 0px no-repeat;
+    float: right;
+    margin: 10px 5px 0 0;
+}
+#nav > ul li {
+    float: left;
+}
+#nav > ul li a {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+}
+#nav > ul li a:hover {
+    background: #bd2a2c;
+}
+
+/************** banner 部分 **************/
+#cate_box {
+    width: 210px;
+    height: 410px;
+    border: 2px solid #cd2a2c;
+    border-top: 0;
+    box-sizing: border-box;
+    padding-top: 5px;
+    background-color: #fafafa;
+}
+#cate_box > li > a {
+    display: block;
+    padding: 5px 0 5px 10px;
+    width: 196px;
+    box-sizing: border-box;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid #fff;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+}
+#cate_box > li > a:hover {
+    background-color: #fff;
+    border-color: #ddd;
+    position: relative;
+    z-index: 50;
+}
+/* 分类信息 */
+#cate_box {
+    position: relative;
+}
+#sub_cate_box {
+    width: 810px;
+    min-height: 200px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: 195px;
+    z-index: 10;
+}
+/* 子分类信息 */
+#sub_cate_box div.close {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #555;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}
+#sub_cate_box #sub_cate_items {
+    width: 600px;
+}
+#sub_cate_items ul {
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+    padding: 5px 0;
+}
+#sub_cate_items ul li {
+    float: left;
+    padding: 5px;
+    border-left: 1px solid #ddd;
+}
+#sub_cate_items li.title {
+    width: 60px;
+    text-align: right;
+    border-left: 0;
+}
+#sub_cate_items li.title a {
+    color: #e4393c;
+    font-weight: 600;
+    text-decoration: underline;
+}
+#sub_cate_items_banner {
+    width: 194px;
+    margin: 10px 0 40px 10px;
+}
+#sub_cate_items_banner h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e4393c;
+    margin-top: 10px;
+}
+#sub_cate_items_banner li {
+    padding: 3px 0;
+}
+#sub_cate_items_banner li a {
+    color: #666;
+}
+/* 隐藏弹出菜单 */
+#sub_cate_box {
+    display: none;
+}
+#cate_box > li:hover #sub_cate_box {
+    display: block;
+}
+#banner {
+    display: none;
+}
+/****************** foot_box 部分 ******************/
+#foot_box {
+    height: 173px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #f1f1f1;
+    margin-top: 12px;
+    background-color: #fff;
+}
+#foot_box p {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 5px 5px 0 55px;
+    background: url('../Images/iconlist_2.png') no-repeat;
+}
+#foot_box ul {
+    width: 140px;
+    float: left;
+}
+#foot_box ul li {
+    line-height: 22px;
+}
+#foot_box ul li b {
+    font-weight: bold;
+    line-height: 30px;
+}
+#foot_box a:hover {
+    color: #ff0700;
+}
+#foot_box p.shopping_guide {background-position: 0px -55px;}
+#foot_box p.send_type {background-position: -50px -55px;}
+#foot_box p.pay_type {background-position: 0px -102px;}
+#foot_box p.sale_service {background-position: -50px -102px;}
+#foot_box p.special_service {background-position: 0px -149px;}
+/****************** footer 部分 ******************/
+#footer {
+    height: 180px;
+    text-align: center;
+    font-size: 12px;
+    margin: 22px auto;
+}
+.copyright {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 12px;
+    line-height: 20px;
+}
+.links a {
+    margin: 0 10px;
+}
+.authentication {
+    margin: 12px auto;
+    width: 532px;
+}
+.authentication a {
+    margin: 10px 12px;
+    float: left;
+}
+#footer a:hover {
+    color: #ff0700;
+}

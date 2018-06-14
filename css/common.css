@@ -92,9 +92,67 @@ li.app_jd a {
     height: 26px;
     padding-left: 20px;
 }
-li.app_jd a:hover {
+li.app_jd a:hover, li.app_jd a.hover {
     background-position: -128px -396px;
+    position: relative;
 }
+#app_jd_items {
+  width: 220px;
+  height: 280px;
+  position: absolute;
+  top: 30px;
+  left: 6px;
+  border: 1px solid #ddd;
+  box-shadow: 0 -1px 3px #ddd;
+  background-color: #fff;
+  display: none;
+}
+#app_jd_items li:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#app_jd_items li:nth-child(2) img {
+  float: left;
+  margin: -10px 10px 0 24px;
+}
+#app_jd_items li:nth-child(2) div {
+  position: relative;
+  top: -30px;
+  left: -10px;
+  color: #e4393c;
+  font-size: 14px;
+  font-weight: bold;
+}
+#app_jd_items li:nth-child(2) div p{
+  width: 97px;
+  height: 68px;
+  background: url("../Images/iconlist_2.png") 0 -360px no-repeat;
+}
+
+#app_jd_items li:nth-child(3) {
+  margin-top: 20px;
+}
+#app_jd_items li:nth-child(3) img {
+  float: left;
+  margin: -10px 10px 0 24px;
+}
+#app_jd_items li:nth-child(3) div {
+  position: relative;
+  top: -30px;
+  left: -10px;
+  color: #e4393c;
+  font-size: 14px;
+  font-weight: bold;
+}
+#app_jd_items li:nth-child(3) div p{
+  width: 97px;
+  height: 68px;
+  background: url("../Images/iconlist_2.png") 0 -360px no-repeat;
+}
+
+
 li.service > a {
     display: inline-block;
     height: 26px;
@@ -102,16 +160,13 @@ li.service > a {
     background: url('../Images/jt_down.jpg') 65px center no-repeat;
     border: 1px solid transparent;
 }
-li.service > a:hover {
+li.service > a:hover, li.service a.hover{
     background: url('../Images/jt_up.jpg') 65px center no-repeat;
     background-color: #fff;
     border: 1px solid #ddd;
     border-bottom: 0px;
     position: relative;
     z-index: 40;
-}
-li.service > a:hover + #service_items {
-    display: block;
 }
 /* 客户服务弹出菜单 */
 #service_items {
@@ -222,31 +277,36 @@ li.service > a:hover + #service_items {
     background-color: #fff;
 }
 /***************** nav 部分 *****************/
-#nav > p {
+#nav > div {
     width: 210px;
     height: 40px;
     line-height: 40px;
     background-color: #cd2a2c;
     position: relative;
 }
-#nav > p a {
+#nav > div > a {
     color: #fff;
     padding-left: 15px;
     font-size: 14px;
     text-decoration: none;
     font-weight: 600;
 }
-#nav > p b {
+#nav > div > b {
     width: 20px;
     height: 20px;
     background: url('../Images/iconlist_2.png') -65px 0px no-repeat;
     float: right;
     margin: 10px 5px 0 0;
 }
-#nav > ul li {
+#nav > ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#nav > ul > li {
     float: left;
 }
-#nav > ul li a {
+#nav > ul > li a {
     display: inline-block;
     width: 100px;
     height: 40px;
@@ -257,11 +317,9 @@ li.service > a:hover + #service_items {
     text-align: center;
     text-decoration: none;
 }
-#nav > ul li a:hover {
+#nav > ul > li a:hover {
     background: #bd2a2c;
 }
-
-/************** banner 部分 **************/
 #cate_box {
     width: 210px;
     height: 410px;
@@ -270,11 +328,18 @@ li.service > a:hover + #service_items {
     box-sizing: border-box;
     padding-top: 5px;
     background-color: #fafafa;
+    z-index: 100;
+}
+#cate_box > li {
+  height: 30px;
+  line-height: 30px;
 }
 #cate_box > li > a {
     display: block;
-    padding: 5px 0 5px 10px;
+    padding-left: 10px;
     width: 196px;
+    height: 30px;
+    line-height: 30px;
     box-sizing: border-box;
     border-top: 1px solid transparent;
     border-bottom: 1px solid #fff;
@@ -282,7 +347,7 @@ li.service > a:hover + #service_items {
     color: #333;
     text-decoration: none;
 }
-#cate_box > li > a:hover {
+#cate_box > li > a:hover, #cate_box > li > a.hover {
     background-color: #fff;
     border-color: #ddd;
     position: relative;
@@ -291,6 +356,7 @@ li.service > a:hover + #service_items {
 /* 分类信息 */
 #cate_box {
     position: relative;
+    display: none;
 }
 #sub_cate_box {
     width: 810px;
@@ -328,6 +394,7 @@ li.service > a:hover + #service_items {
 #sub_cate_items ul li {
     float: left;
     padding: 5px;
+    height: 26px;
     border-left: 1px solid #ddd;
 }
 #sub_cate_items li.title {
@@ -358,10 +425,7 @@ li.service > a:hover + #service_items {
 }
 /* 隐藏弹出菜单 */
 #sub_cate_box {
-    display: none;
-}
-#cate_box > li:hover #sub_cate_box {
-    display: block;
+  display: none;
 }
 #banner {
     display: none;
